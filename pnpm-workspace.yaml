@@ -1,0 +1,6 @@
+packages:
+  - 'apps/*'
+  - 'apps/workers/*'
+  - 'apps/workers/durable-objects/*'
+  - 'packages/*'
+  - 'packages/config/*'

@@ -1,0 +1,18 @@
+import { Sidebar } from '@/components/layout/Sidebar';
+import { TopNav } from '@/components/layout/TopNav';
+
+export default function AppLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex h-screen overflow-hidden bg-[#F8FAFC]">
+      <Sidebar />
+      <div className="flex flex-col flex-1 min-w-0 overflow-hidden">
+        <TopNav />
+        <main className="flex-1 overflow-y-auto p-8">
+          <div className="max-w-[1400px] mx-auto w-full">
+            {children}
+          </div>
+        </main>
+      </div>
+    </div>
+  );
+}

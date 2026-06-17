@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Maven+Pro:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-brand-primary: #3353FE;
+    --color-brand-hover: #1F4CEE;
+    --color-brand-accent: #32B7EE;
+    --color-bg-base: #FFFFFF;
+    --color-bg-subtle: #F8FAFC;
+    --color-bg-muted: #F1F5F9;
+    --color-border: #E6E5EC;
+    --color-text-primary: #0F172A;
+    --color-text-secondary: #64748B;
+    --sidebar-width: 240px;
+    --sidebar-collapsed-width: 64px;
+    --topnav-height: 56px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 13px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--color-bg-base);
+    color: var(--color-text-primary);
+    line-height: 1.5;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Maven Pro', 'Inter', sans-serif;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+  }
+}
+
+@layer utilities {
+  .gradient-brand {
+    background: linear-gradient(90deg, #1F4CEE 0%, #41A7FE 50%, #32B7EE 100%);
+  }
+
+  .gradient-brand-text {
+    background: linear-gradient(90deg, #1F4CEE 0%, #41A7FE 50%, #32B7EE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}

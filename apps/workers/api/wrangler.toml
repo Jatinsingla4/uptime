@@ -1,0 +1,41 @@
+name = "sitepulse-api"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+API_BASE_URL = "https://api.sitepulse.app"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "sitepulse-db"
+database_id = "YOUR_D1_DATABASE_ID"
+migrations_dir = "../../../packages/db/migrations"
+
+[[queues.producers]]
+queue = "crawl-tasks"
+binding = "CRAWL_TASKS"
+
+[[queues.producers]]
+queue = "crawl-tasks-dlq"
+binding = "CRAWL_TASKS_DLQ"
+
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "sitepulse-storage"
+
+[[durable_objects.bindings]]
+name = "CRAWL_COORDINATOR"
+class_name = "CrawlCoordinator"
+script_name = "sitepulse-crawl-coordinator"
+
+[[durable_objects.bindings]]
+name = "UPTIME_MONITOR"
+class_name = "UptimeMonitor"
+script_name = "sitepulse-uptime-monitor"
+
+[secrets]
+JWT_SECRET = ""
+
+[env.production]
+name = "sitepulse-api-production"

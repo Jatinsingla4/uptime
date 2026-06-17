@@ -1,0 +1,20 @@
+{
+  "name": "@sitepulse/trpc",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@sitepulse/shared": "workspace:*",
+    "@sitepulse/db": "workspace:*",
+    "@trpc/server": "^11.0.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@sitepulse/tsconfig": "workspace:*",
+    "@cloudflare/workers-types": "^4.20250109.0",
+    "typescript": "^5.7.3"
+  }
+}

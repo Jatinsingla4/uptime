@@ -1,0 +1,19 @@
+{
+  "name": "@sitepulse/db",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./client": "./src/client.ts",
+    "./queries/*": "./src/queries/*.ts"
+  },
+  "dependencies": {
+    "@sitepulse/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@sitepulse/tsconfig": "workspace:*",
+    "@cloudflare/workers-types": "^4.20250109.0",
+    "typescript": "^5.7.3"
+  }
+}

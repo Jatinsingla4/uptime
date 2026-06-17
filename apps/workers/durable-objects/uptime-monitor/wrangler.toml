@@ -1,0 +1,17 @@
+name = "sitepulse-uptime-monitor"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[[durable_objects.bindings]]
+name = "UPTIME_MONITOR"
+class_name = "UptimeMonitor"
+
+[[migrations]]
+tag = "v1"
+new_classes = ["UptimeMonitor"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "sitepulse-db"
+database_id = "YOUR_D1_DATABASE_ID"

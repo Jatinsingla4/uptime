@@ -1,0 +1,11 @@
+{
+  "name": "@sitepulse/tsconfig",
+  "version": "0.1.0",
+  "private": true,
+  "exports": {
+    "./base": "./base.json",
+    "./worker": "./worker.json",
+    "./nextjs": "./nextjs.json"
+  },
+  "files": ["base.json", "worker.json", "nextjs.json"]
+}

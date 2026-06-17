@@ -1,0 +1,22 @@
+name = "sitepulse-scheduler"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Every hour: kick off scheduled crawls and cleanup
+[triggers]
+crons = ["0 * * * *", "0 2 * * *"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "sitepulse-db"
+database_id = "YOUR_D1_DATABASE_ID"
+
+[[durable_objects.bindings]]
+name = "CRAWL_COORDINATOR"
+class_name = "CrawlCoordinator"
+script_name = "sitepulse-crawl-coordinator"
+
+[[queues.producers]]
+queue = "crawl-tasks"
+binding = "CRAWL_TASKS"

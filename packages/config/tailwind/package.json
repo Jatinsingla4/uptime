@@ -1,0 +1,12 @@
+{
+  "name": "@sitepulse/tailwind-config",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./preset.ts",
+  "exports": {
+    ".": "./preset.ts"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

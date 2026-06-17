@@ -1,0 +1,21 @@
+name = "sitepulse-crawl-coordinator"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[[durable_objects.bindings]]
+name = "CRAWL_COORDINATOR"
+class_name = "CrawlCoordinator"
+
+[[migrations]]
+tag = "v1"
+new_classes = ["CrawlCoordinator"]
+
+[[queues.producers]]
+queue = "crawl-tasks"
+binding = "CRAWL_TASKS"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "sitepulse-db"
+database_id = "YOUR_D1_DATABASE_ID"

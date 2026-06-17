@@ -1,0 +1,25 @@
+{
+  "name": "@sitepulse/api-worker",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev --local --port 8787 --inspector-port 9227",
+    "build": "wrangler deploy --dry-run",
+    "typecheck": "tsc --noEmit",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "@sitepulse/trpc": "workspace:*",
+    "@sitepulse/shared": "workspace:*",
+    "@sitepulse/db": "workspace:*",
+    "@trpc/server": "^11.0.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@sitepulse/tsconfig": "workspace:*",
+    "@cloudflare/workers-types": "^4.20250109.0",
+    "wrangler": "^3.99.0",
+    "typescript": "^5.7.3"
+  }
+}

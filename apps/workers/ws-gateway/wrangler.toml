@@ -1,0 +1,17 @@
+name = "sitepulse-ws-gateway"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[[durable_objects.bindings]]
+name = "CRAWL_COORDINATOR"
+class_name = "CrawlCoordinator"
+script_name = "sitepulse-crawl-coordinator"
+
+[[durable_objects.bindings]]
+name = "UPTIME_MONITOR"
+class_name = "UptimeMonitor"
+script_name = "sitepulse-uptime-monitor"
+
+[secrets]
+JWT_SECRET = ""

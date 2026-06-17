@@ -1,0 +1,17 @@
+name = "sitepulse-crawler-consumer"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[[queues.consumers]]
+queue = "crawl-tasks"
+max_batch_size = 10
+max_batch_timeout = 5
+max_retries = 3
+dead_letter_queue = "crawl-tasks-dlq"
+retry_delay = 2
+
+[[durable_objects.bindings]]
+name = "CRAWL_COORDINATOR"
+class_name = "CrawlCoordinator"
+script_name = "sitepulse-crawl-coordinator"

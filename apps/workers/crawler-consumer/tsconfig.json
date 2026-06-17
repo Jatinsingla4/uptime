@@ -1,0 +1,5 @@
+{
+  "extends": "@sitepulse/tsconfig/worker",
+  "compilerOptions": { "outDir": "dist" },
+  "include": ["src"]
+}
